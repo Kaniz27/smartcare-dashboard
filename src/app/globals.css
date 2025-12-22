@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font families */
+  --font-family-inter: var(--font-inter);
+  --font-family-bangla: "Noto_Sans_Bengali", sans-serif;
+  --font-family-solaiman-lipi: "SolaimanLipi", sans-serif;
+
+  /* Color definitions */
+  --background: var(--background);
+  --foreground: var(--foreground);
+  --tel: 30 58 58; /* #1E3A3A in RGB */
+  --gold: 196 141 62; /* #C48D3E in RGB */
+}
+
+body {
+  font-family: var(--font-family-inter);
+}
+
+.bangla {
+  font-family: var(--font-family-bangla);
+  padding-right: 0 !important;
+}
+
+@layer utilities {
+  .bg-tel {
+    background-color: rgb(var(--tel));
+  }
+  .text-tel {
+    color: rgb(var(--tel));
+  }
+  .bg-gold {
+    background-color: rgb(var(--gold));
+  }
+  .text-gold {
+    color: rgb(var(--gold));
+  }
+}
+
+.ant-menu-horizontal {
+  height: 70px;
+  display: flex;
+  padding-top: 14px;
+}
+.ant-menu-submenu-popup {
+  top: 70 !important;
+}
+
+.ant-segmented-group {
+  background: #dd9c41 !important;
+  color: white !important;
+}
+
+.ant-drawer-body::-webkit-scrollbar {
+  display: none;
+}
+.ant-table-cell:first-child {
+  text-align: center !important;
+}
+
+.ant-notification {
+  top: 50px !important;
+  z-index: 999999999999999999 !important;
+}
+.ant-float-btn-content {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 5px !important;
+}
+.ant-float-btn-body {
+  background-color: #1e3a3a !important;
+}
+.ant-float-btn-primary .ant-float-btn-body {
+  background-color: #1e3a3a !important;
+}
+.ant-menu-submenu-title {
+  margin: 0px !important;
+}
+
+.ant-input:focus {
+  /* outline: 4px solid #1E3A3A !important; */
+  outline-color: #1e3a3a !important;
+  box-shadow: 0 0 1px rgba(30, 58, 58, 1) !important;
+}
+.ant-input-outlined:focus,
+.ant-select-outlined:focus {
+  outline: 1px solid #1e3a3a !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: #f3f4f6 !important;
+}
+.ant-upload .ant-btn {
+  width: 100% !important;
+}
+.ant-upload {
+  width: 100% !important;
+}
+:where(.css-dev-only-do-not-override-11iyfoj) a {
+  color: #0c0d0e;
+}
+:where(.css-dev-only-do-not-override-11iyfoj) a:hover {
+  color: #0c0d0e;
+}
