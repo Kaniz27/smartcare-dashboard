@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/common/FormSwitchInput.tsx
 "use client";
 import { Form, Switch } from "antd";

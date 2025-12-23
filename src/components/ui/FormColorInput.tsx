@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/common/FormColorInput.tsx
 "use client";
 import { Form, Input } from "antd";

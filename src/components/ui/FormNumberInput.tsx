@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Form, InputNumber } from "antd";
 import { Controller, Control, FieldError } from "react-hook-form";
 
 interface FormNumberInputProps {
-  name?: string;
+  name?: any;
   control?: Control<any>;
   label: string;
   placeholder?: string;

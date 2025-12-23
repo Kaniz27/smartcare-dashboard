@@ -11,9 +11,9 @@ import {
     GlobalOutlined,
     EditOutlined,
 } from "@ant-design/icons";
-import { UserProfile } from "../../../types";
-import { img } from "../../../theme";
 import Image from "next/image";
+import { UserProfile } from "@/types/User";
+import { img } from "../theme";
 
 const { Title, Text } = Typography;
 

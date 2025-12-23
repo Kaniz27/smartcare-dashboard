@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Form, Select } from "antd";
 import { ReactNode } from "react";

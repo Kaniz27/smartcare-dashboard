@@ -34,6 +34,12 @@ const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
     
     },
     {
+      key: "/doctor",
+      icon: <FaCalendarCheck />,
+      label: "Doctor List",
+      onClick: () => router.push("/doctor"),
+    },
+    {
       key: "/appointment",
       icon: <FaCalendarCheck />,
       label: "Appointment List",
@@ -57,12 +63,7 @@ const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
       label: "Donation",
       onClick: () => router.push("/donation"),
     },
-    {
-      key: "/upload",
-      icon: <FaUpload />,
-      label: "Upload",
-      onClick: () => router.push("/upload"),
-    },
+    
     
     {
       key: "/setting",
@@ -94,10 +95,10 @@ const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
 
   const donationItem: MenuProps["items"] = [
     {
-      key: "/donation",
+      key: "/donation/upload",
       icon: <FaDonate />,
       label: "Donation",
-      onClick: () => router.push("/donation"),
+      onClick: () => router.push("/donation/upload"),
     },
   ];
 
@@ -141,7 +142,7 @@ const Sidebar = ({ collapsed }: { collapsed: boolean }) => {
 
       {/* Button */}
       <Link
-        href="/donation"
+        href="/donationcard"
         className="relative px-6 py-2 !bg-[#08668E] !text-white font-semibold rounded-full transition"
       >
         Donate Now

@@ -2,40 +2,47 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { medicalHistoryData, MedicalHistoryItem } from "@/data/medicalhistory";
-import { Space, Table, TableProps, Tag } from "antd";
+import { medicalHistoryData, MedicalHistoryItem } from "@/data/medicalhisrory";
+import { Input, Space, Table, TableProps, Tag } from "antd";
 
+const { Search } = Input;
+
+/* ---------------- Status Colors ---------------- */
 const statusColors: Record<MedicalHistoryItem["status"], string> = {
   Pending: "orange",
   Completed: "green",
   Withdraw: "red",
 };
 
+/* ---------------- Columns ---------------- */
 const columns: TableProps<MedicalHistoryItem>["columns"] = [
   {
     title: "Name",
     dataIndex: "name",
     key: "name",
     render: (_, record) => (
-      <Space size="middle">
+      <Space>
         <Image
-          className="rounded-full"
-          width={30}
-          height={30}
           src={record.image}
           alt={record.name}
+          width={40}
+          height={40}
+          className="rounded-full"
         />
         <span>{record.name}</span>
       </Space>
     ),
   },
   {
+    title: "Problems",
+    dataIndex: "problems",
+    key: "problems",
+  },
+  {
     title: "Status",
     dataIndex: "status",
     key: "status",
-    render: (s: MedicalHistoryItem["status"]) => (
-      <Tag color={statusColors[s]}>{s}</Tag>
-    ),
+    render: (status) => <Tag color={statusColors[status]}>{status}</Tag>,
   },
   {
     title: "Date",
@@ -57,53 +64,49 @@ const columns: TableProps<MedicalHistoryItem>["columns"] = [
     dataIndex: "hospital",
     key: "hospital",
   },
-  // Prescription + Report in same column
   {
-    title: "Prescription & Report",
-    key: "prescription_report",
-    render: (record: MedicalHistoryItem) => (
-      <div className="flex gap-2">
-  {record.prescription ? (
-    <span className="px-2 py-1 bg-green-100 text-green-800 rounded">
-      {record.prescription}
-    </span>
-  ) : (
-    <span className="px-2 py-1 bg-[#cde1e8] text-[#2b6771] rounded">
-      Prescription
-    </span>
-  )}
-  {record.report ? (
-    <a
-      href={record.report}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="px-2 py-1 bg-blue-100 text-blue-800 rounded inline-block"
-    >
-      Report
-    </a>
-  ) : (
-    <span className="px-2 py-1 bg-[#cde1e8] text-[#2b6771] rounded">
-      Report
-    </span>
-  )}
-</div>
-
+    title: "Prescription / Report",
+    key: "pr",
+    render: (_, record) => (
+      <Space>
+        <Tag color="green">Prescription</Tag>
+        <Tag color="blue">Report</Tag>
+      </Space>
     ),
   },
 ];
 
 const MedicalHistoryTable = () => {
   const [data, setData] = useState<MedicalHistoryItem[]>(medicalHistoryData);
-  const [loading, setLoading] = useState(false);
 
-  if (loading) {
-    return <p className="p-6">Loading...</p>;
-  }
+  const onSearch = (value: string) => {
+    const filtered = medicalHistoryData.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setData(filtered);
+  };
 
   return (
     <div className="p-6 mt-10 bg-white rounded-xl shadow">
-      <h2 className="text-[22px] font-semibold mb-4">Appointment List</h2>
-      <Table<MedicalHistoryItem> rowKey="id" columns={columns} dataSource={data} />
+      {/* 🔹 Header */}
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-[22px] font-semibold">Today’s Patient</h2>
+
+        <Search
+          placeholder="Search patient name"
+          allowClear
+          onSearch={onSearch}
+          style={{ width: 260 }}
+        />
+      </div>
+
+      {/* 🔹 Table */}
+      <Table<MedicalHistoryItem>
+        rowKey="id"
+        columns={columns}
+        dataSource={data}
+        pagination={false}
+      />
     </div>
   );
 };

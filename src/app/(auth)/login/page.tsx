@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Cookies from "js-cookie";
 import UserLoginForm from "../../../components/UserLoginForm";
@@ -34,8 +35,8 @@ const UserLoginPage = () => {
 
       message.success(response.message);
       router.push("/dashboard");
-    } catch (err) {
-      message.error(err?.data?.message || "Login failed");
+    } catch (err:any) {
+      message.error(err?.message || "Login failed");
     }
   };
 

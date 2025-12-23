@@ -1,22 +1,13 @@
-// data/medicalHistory.ts
-
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
-/* ---------------- Type ---------------- */
 export type MedicalHistoryItem = {
   id: number;
   patientName: string;
   doctorName: string;
-  appointmentDate: string; // Current appointment
+  appointmentDate: string;
   appointmentTime: string;
-  lastAppointmentDate?: string; // Optional
+  lastAppointmentDate?: string; // optional
   department: string;
-  status: "Pending" | "Completed" | "Withdraw";
-  prescription?: string;
-  report?: string;
 };
 
-/* ---------------- Sample Data ---------------- */
 export const medicalHistoryData: MedicalHistoryItem[] = [
   {
     id: 1,
@@ -26,9 +17,6 @@ export const medicalHistoryData: MedicalHistoryItem[] = [
     appointmentTime: "10:00 AM",
     lastAppointmentDate: "2025-04-15",
     department: "Cardiology",
-    status: "Completed",
-    prescription: "Aspirin 100mg",
-    report: "Blood Test Report.pdf",
   },
   {
     id: 2,
@@ -38,8 +26,6 @@ export const medicalHistoryData: MedicalHistoryItem[] = [
     appointmentTime: "02:00 PM",
     lastAppointmentDate: "2025-03-10",
     department: "Orthopedics",
-    status: "Pending",
-    prescription: "Painkiller",
   },
   {
     id: 3,
@@ -49,7 +35,6 @@ export const medicalHistoryData: MedicalHistoryItem[] = [
     appointmentTime: "11:30 AM",
     lastAppointmentDate: "2025-02-28",
     department: "Dermatology",
-    status: "Withdraw",
   },
   {
     id: 4,
@@ -59,9 +44,6 @@ export const medicalHistoryData: MedicalHistoryItem[] = [
     appointmentTime: "09:00 AM",
     lastAppointmentDate: "2025-01-15",
     department: "Pediatrics",
-    status: "Completed",
-    prescription: "Vitamin D",
-    report: "X-ray Report.pdf",
   },
   {
     id: 5,
@@ -71,6 +53,5 @@ export const medicalHistoryData: MedicalHistoryItem[] = [
     appointmentTime: "03:00 PM",
     lastAppointmentDate: "2025-04-10",
     department: "Neurology",
-    status: "Pending",
   },
 ];

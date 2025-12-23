@@ -3,15 +3,16 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 export type MedicalHistoryItem = {
   id: number;
   name: string;
-  status: "Pending" | "Completed" | "Withdraw";
+  status: string;
   date: string;
   time: string;
   phone: string;
-  image: string |StaticImport;
+  image: string | StaticImport;
   hospital: string;
+  problems: string; // নতুন ফিল্ড
 };
 
-export const medicalHistoryData:MedicalHistoryItem[] = [
+export const medicalHistoryData: MedicalHistoryItem[] = [
   {
     id: 1,
     name: "Karar Mahmud",
@@ -21,6 +22,7 @@ export const medicalHistoryData:MedicalHistoryItem[] = [
     phone: "01601528792",
     image: "https://i.pravatar.cc/150?img=1",
     hospital: "Square Hospital Ltd.",
+    problems: "Fever and headache",
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ export const medicalHistoryData:MedicalHistoryItem[] = [
     phone: "01601528792",
     image: "https://i.pravatar.cc/150?img=2",
     hospital: "United Hospital Dhaka",
+    problems: "Diabetes and high blood pressure",
   },
   {
     id: 3,
@@ -41,6 +44,7 @@ export const medicalHistoryData:MedicalHistoryItem[] = [
     phone: "01601528792",
     image: "https://i.pravatar.cc/150?img=3",
     hospital: "Labaid Specialized Hospital",
+    problems: "Chest pain and shortness of breath",
   },
   {
     id: 4,
@@ -51,6 +55,7 @@ export const medicalHistoryData:MedicalHistoryItem[] = [
     phone: "01601528792",
     image: "https://i.pravatar.cc/150?img=4",
     hospital: "Evercare Hospital Dhaka",
+    problems: "Stomach pain and nausea",
   },
   {
     id: 5,
@@ -61,5 +66,6 @@ export const medicalHistoryData:MedicalHistoryItem[] = [
     phone: "01601528792",
     image: "https://i.pravatar.cc/150?img=5",
     hospital: "Popular Diagnostic Centre",
+    problems: "Cough and sore throat",
   },
 ];

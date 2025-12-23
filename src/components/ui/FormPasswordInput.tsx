@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Form, Input } from "antd";
 import { Controller, Control, FieldError } from "react-hook-form";

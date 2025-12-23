@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/common/FormFileInput.tsx
 "use client";
 import { Form, Upload, Button } from "antd";

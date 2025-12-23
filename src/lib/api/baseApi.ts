@@ -48,7 +48,7 @@ const dynamicBaseQuery = async (args, api, extraOptions) => {
       // Clear cookies
       Cookies.remove("access_token");
       Cookies.remove("refresh_token");
-      // window.open("/user/login", "_self");
+      window.open("/user/login", "_self");
     }
   }
 

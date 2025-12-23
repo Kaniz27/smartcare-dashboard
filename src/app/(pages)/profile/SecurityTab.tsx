@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Card, Typography, Form } from "antd";
 
 import { SecurityFormValues, securitySchema } from "../../../schema";
-import FormPasswordInput from "../../ui/FormPasswordInput";
+import FormPasswordInput from "@/components/ui/FormPasswordInput";
 
 const { Title, Text } = Typography;
 

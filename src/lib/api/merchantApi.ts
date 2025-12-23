@@ -1,5 +1,5 @@
 import { LoginFormData, signupSchema } from "./../../schema/userLoginSchema";
-import { baseApi } from "./baseApi";
+import { baseApi } from "../api/baseApi";
 import { User } from "../../types";
 import z from "zod";
 

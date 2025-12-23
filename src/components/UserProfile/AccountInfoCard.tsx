@@ -1,9 +1,9 @@
+import { UserProfile } from "@/types/User";
 import {
     Card,
     Typography,
     Descriptions,
 } from "antd";
-import { UserProfile } from "../../../types";
 
 const { Title, Text } = Typography;
 interface AccountInfoCardProps {

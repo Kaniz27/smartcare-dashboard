@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Space, Table, TableProps, Tag } from "antd";
-import { medicalHistoryData, MedicalHistoryItem } from "@/data/medicalhistory";
+import { medicalHistoryData, MedicalHistoryItem } from "@/data/medicalhisrory";
 
 /* ---------------- Status Colors ---------------- */
 const statusColors: Record<MedicalHistoryItem["status"], string> = {
@@ -16,6 +16,7 @@ const statusColors: Record<MedicalHistoryItem["status"], string> = {
 const columns: TableProps<MedicalHistoryItem>["columns"] = [
   {
     title: "Name",
+    dataIndex: "name",
     key: "name",
     width: 180,
     render: (_, record) => (
@@ -36,9 +37,7 @@ const columns: TableProps<MedicalHistoryItem>["columns"] = [
     dataIndex: "status",
     key: "status",
     width: 110,
-    render: (status) => (
-      <Tag color={statusColors[status]}>{status}</Tag>
-    ),
+    render: (status) => <Tag color={statusColors[status]}>{status}</Tag>,
   },
   {
     title: "Date",
@@ -69,14 +68,10 @@ const columns: TableProps<MedicalHistoryItem>["columns"] = [
     key: "prescription_report",
     width: 220,
     render: (_, record) => (
-      <div
-        className="flex gap-2"
-        style={{ whiteSpace: "nowrap" }}
-      >
+      <div className="flex gap-2" style={{ whiteSpace: "nowrap" }}>
         <span className="px-2 py-1 text-sm rounded bg-[#cde1e8] text-[#2b6771]">
           {record.prescription || "Prescription"}
         </span>
-
         <span className="px-2 py-1 text-sm rounded bg-[#cde1e8] text-[#2b6771]">
           {record.report ? "Report" : "Report"}
         </span>
@@ -89,9 +84,7 @@ const columns: TableProps<MedicalHistoryItem>["columns"] = [
 const MedicalHistoryTable = () => {
   return (
     <div className="mx-auto mt-10 w-[831px] bg-white p-6 rounded-xl shadow">
-      <h2 className="mb-4 text-[22px] font-semibold">
-        Appointment List
-      </h2>
+      <h2 className="mb-4 text-[22px] font-semibold">Appointment List</h2>
 
       <Table<MedicalHistoryItem>
         rowKey="id"

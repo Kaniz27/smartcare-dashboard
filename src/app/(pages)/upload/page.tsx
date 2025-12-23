@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
@@ -49,7 +50,6 @@ const UploadReportPage = () => {
             Upload Patient Report
           </h2>
         }
-        bordered={false}
       >
         <Form layout="vertical" onFinish={onFinish}>
           {/* Patient Name */}
@@ -82,7 +82,7 @@ const UploadReportPage = () => {
             <Button
               htmlType="submit"
               block
-              className="!bg-[#2b6771] hover:!bg-[#245a63] !text-white !border-none"
+              className="bg-[#2b6771]! hover:bg-[#245a63]! text-white! border-none!"
             >
               Upload Report
             </Button>

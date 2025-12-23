@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {
     Typography,
@@ -12,13 +13,13 @@ import {
     PhoneOutlined,
     EditOutlined,
 } from "@ant-design/icons";
-import { UserProfile } from "../../../types";
+import { UserProfile } from "@/types/User";
 
 interface EditProfileModalProps {
     initialValues: UserProfile;
     isOpen: boolean;
     onCancel: () => void;
-    onFinish: (values) => void;
+    onFinish: (values:any) => void;
     isSubmitting: boolean;
 }
 

@@ -47,7 +47,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
 
         <Layout>
           <Content className={`${!hideNav && "py-20"} flex-1 p-6 bg-[#e3f6f5]`}>
-            <Suspense fallback={<IsLoadingSpin size="large" />}>
+            <Suspense fallback={<IsLoadingSpin  />}>
               <Elements stripe={stripePromise}>
                 {children}
               </Elements>

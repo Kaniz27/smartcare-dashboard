@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/common/FormRadioGroupInput.tsx
 "use client";
 

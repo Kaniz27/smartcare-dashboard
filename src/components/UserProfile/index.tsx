@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -7,12 +9,12 @@ import {
   Col,
   Alert,
 } from "antd";
-import IsLoadingSpin from "../../common/IsLoadingSpin";
-import { UserProfile } from "../../../types";
 import AvatarCard from "./AvatarCard";
 import AccountInfoCard from "./AccountInfoCard";
 import SecurityCard from "./SecurityCard";
 import EditProfileModal from "./EditProfileModal";
+import { UserProfile } from "@/types/User";
+import IsLoadingSpin from "../common/IsLoadingSpin";
 
 const { Title, } = Typography;
 
@@ -52,7 +54,7 @@ const UserProfilePage: React.FC = () => {
     if (user) setProfileData(user);
   }, [user]);
 
-  const handleEditFinish = (values) => {
+  const handleEditFinish = (values:any) => {
     setIsSubmitting(true);
     setTimeout(() => {
       setProfileData((prev) => (prev ? { ...prev, ...values } : null));
@@ -61,7 +63,7 @@ const UserProfilePage: React.FC = () => {
     }, 1500);
   };
 
-  if (isLoading) return <IsLoadingSpin size="large" />;
+  if (isLoading) return <IsLoadingSpin />;
   if (isError || !profileData)
     return (
       <Alert
