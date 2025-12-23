@@ -26,7 +26,7 @@ const UserLoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
   });
 
   return (
-    <div className="min-h-[calc(100vh-100px)] flex justify-center flex-col items-center bg-gray-50">
+    <div className="min-h-[calc(100vh-100px)] flex justify-center flex-col items-center  bg-gray-50">
       <div className="mb-12">
         <Link href="https://hsblco.com/">
           <Image src={img?.logo} width={180} height={50} alt="logo" />
@@ -49,9 +49,15 @@ const UserLoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
             label="Password"
             error={errors.password}
           />
-          <Button type="primary" htmlType="submit" block loading={isLoading}>
-            {isLoading ? "Signing in..." : "SIgn-in"}
+          <Button
+            htmlType="submit"
+            block
+            loading={isLoading}
+            className="bg-[#05678d]! hover:bg-[#2b6771] text-white! border-none"
+          >
+            <span>{isLoading ? "Signing in..." : "Sign-in"}</span>
           </Button>
+
           <div className="mt-4 flex justify-between">
             <Link
               href="/user/forgot-password"
@@ -62,13 +68,14 @@ const UserLoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
 
             <Link
               href="/user/register"
-              className="text-primary hover:text-blue-800 text-sm"
+              className="text-white bg-[#05678d] hover:bg-[#2b6771] hover:text-white 
+             px-4 py-2 rounded-md text-sm transition"
             >
               Sign Up
             </Link>
           </div>
-          <Paragraph className="mt-6 mb-0! text-center">
-            CareOn version: V:3.1
+          <Paragraph className="mt-6 mb-10! text-center">
+            The HSBLCO LCC's version: V:3.2
           </Paragraph>
         </Form>
       </Card>

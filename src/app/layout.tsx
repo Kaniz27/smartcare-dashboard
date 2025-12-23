@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./custom.css";
 import ClientLayout from "./ClientLayout";
+import { Toaster } from "react-hot-toast";
 
 const interFont = Inter({
   variable: "--font-inter",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={interFont.variable}>
         <ClientLayout>
           {children}
+            <Toaster position="top-right" reverseOrder={false} />
           </ClientLayout>
       </body>
     </html>
